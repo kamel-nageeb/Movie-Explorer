@@ -1,0 +1,145 @@
+.about-page {
+  padding: 4rem 0;
+}
+
+.about-page .container {
+  max-width: 1200px;
+  margin: 45px auto;
+  padding: 0 2rem;
+}
+
+.about-hero {
+  text-align: center;
+  max-width: 800px;
+  margin: 0 auto 4rem auto;
+}
+
+.subtitle {
+  color: var(--primary);
+  font-weight: 700;
+  letter-spacing: 2px;
+  font-size: 0.9rem;
+}
+
+.about-hero h1 {
+  font-size: 3.5rem;
+  font-weight: 900;
+  margin: 1rem 0;
+}
+
+.about-hero h1 span {
+  color: var(--primary);
+  display: block;
+}
+
+.about-hero p {
+  color: var(--text-muted);
+  font-size: 1.15rem;
+  line-height: 1.6;
+}
+
+.cinema-visual {
+  margin-bottom: 6rem;
+}
+
+.visual-wrapper {
+  border-radius: 20px;
+  overflow: hidden;
+  padding: 1rem;
+}
+
+.visual-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+  margin-bottom: 8rem;
+}
+
+.feature-card {
+  padding: 3rem 2rem;
+  text-align: center;
+  border-radius: 12px;
+  transition: var(--transition);
+}
+
+.feature-card:hover {
+  transform: translateY(-10px);
+  background: rgba(255,255,255,0.05);
+}
+
+.feature-icon {
+  color: var(--primary);
+  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: center;
+}
+
+.feature-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.feature-card p {
+  color: var(--text-muted);
+}
+
+.tech-section {
+  text-align: center;
+}
+
+.tech-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 4rem;
+}
+
+.tech-grid {
+  display: flex;
+  justify-content: center;
+  gap: 6rem;
+}
+
+.tech-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.tech-icon {
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,0.05);
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+  margin-bottom: 1rem;
+}
+
+.tech-item h4 {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+.tech-item span {
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+@media (max-width: 992px) {
+  .features {
+    grid-template-columns: 1fr;
+  }
+  .tech-grid {
+    gap: 3rem;
+    flex-wrap: wrap;
+  }
+}

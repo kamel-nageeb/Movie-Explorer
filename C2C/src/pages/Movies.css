@@ -1,0 +1,86 @@
+.movies-page {
+    background-color: #0f0f0f; 
+    min-height: 100vh;
+}
+
+.movies-header {
+    margin-bottom: 3rem;
+    text-align: left;
+}
+
+.movies-header h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    background: linear-gradient(to right, #fff, #888);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin:40px
+}
+
+
+.filter-container {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap; 
+    margin: 40px;
+}
+
+
+.filter-btn {
+    padding: 10px 24px;
+    border-radius: 30px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    background: rgba(255, 255, 255, 0.05);
+    color: #eee;
+    font-size: 0.95rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.filter-btn:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(255, 255, 255, 0.3);
+}
+
+
+.filter-btn.active {
+    background: #e50914; 
+    border-color: #e50914;
+    color: white;
+    box-shadow: 0 4px 15px rgba(229, 9, 20, 0.3);
+}
+
+
+.movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 30px;
+    padding-bottom: 50px;
+    margin: 30px;
+}
+
+
+.no-results {
+    text-align: center;
+    padding: 100px 0;
+    color: #666;
+}
+
+
+@media (max-width: 768px) {
+    .movies-header h1 {
+        font-size: 1.8rem;
+    }
+    
+    .movie-grid {
+        grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+        gap: 15px;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.85rem;
+    }
+}

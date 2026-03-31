@@ -1,0 +1,159 @@
+.movie-details-page {
+  background-color: #0f0f0f;
+  color: white;
+  padding: 40px 6%;
+  font-family: Arial, sans-serif;
+}
+
+.breadcrumbs {
+  margin-bottom: 30px;
+  font-size: 0.9rem;
+}
+
+.breadcrumbs a { color: #888; text-decoration: none; }
+.breadcrumbs .separator { color: #444; }
+.breadcrumbs .current-movie { color: #888; }
+
+.main-details-content {
+  display: flex;
+  gap: 50px;
+  margin-bottom: 60px;
+}
+
+.left-details-side { flex: 1 1 30%; max-width: 350px; }
+
+.movie-poster-large img {
+  width: 100%;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+}
+
+.action-buttons { display: flex; flex-direction: column; gap: 15px; margin-top: 20px; }
+
+.btn-add-favorites, .btn-back-home {
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: 0.3s;
+  font-size: 1rem;
+}
+
+.btn-add-favorites { background-color: #e50914; color: white; }
+.btn-add-favorites:hover { background-color: #ff0f1a; }
+.btn-back-home { background-color: transparent; border: 1px solid #444; color: white; }
+.btn-back-home:hover { background-color: #1a1a1a; }
+
+.right-details-side { flex: 2 1 70%; }
+.movie-details-title { font-size: 3rem; margin-bottom: 10px; }
+.movie-meta-info { color: #888; font-size: 1.1rem; display: flex; gap: 10px; align-items: center; margin-bottom: 25px; }
+.dot { font-size: 1.5rem; }
+
+.imdb-rating-badge { margin-bottom: 30px; }
+.star { color: #f5c518; font-size: 2rem; margin-right: 5px; }
+.score { font-size: 2rem; font-weight: bold; }
+.out-of { color: #444; }
+.imdb-tag { color: #888; font-size: 0.8rem; }
+
+.info-block, .plot-summary { margin-bottom: 25px; }
+.info-block h3, .plot-summary h3 { font-size: 1.2rem; color: #fff; margin-bottom: 8px; }
+.info-block p { color: #aaa; line-height: 1.6; }
+.related-movies-section { margin-top: 60px; }
+.view-all { color: #e50914; text-decoration: none; font-weight: bold; }
+
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 20px;
+}
+
+.movie-card {
+  position: relative;
+  transition: 0.3s;
+}
+
+.movie-card img { width: 100%; border-radius: 8px; }
+
+.imdb-tag-yellow {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background-color: rgba(245, 197, 24, 0.8);
+  color: #000;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.btn-favorite {
+  padding: 12px 20px;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+
+.btn-favorite:not(.active) {
+  background-color: #e50914;
+  color: white;
+}
+
+.btn-favorite:not(.active):hover {
+  background-color: #ff0f1a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(229, 9, 20, 0.4);
+}
+
+.btn-favorite.active {
+  background-color: #1a1a1a; 
+  border: 1px solid #444;
+  color: #888;
+}
+
+.btn-favorite.active:hover {
+  background-color: #262626;
+  color: #fff;
+  border-color: #666;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 850px) {
+  .main-details-content {
+    flex-direction: column; 
+    align-items: center;
+    gap: 30px;
+  }
+
+  .left-details-side {
+    max-width: 280px; 
+    width: 100%;
+  }
+
+  .right-details-side {
+    text-align: center; 
+  }
+
+  .movie-details-title {
+    font-size: 2rem; 
+  }
+
+  .movie-meta-info {  
+    justify-content: center; 
+  }
+
+  .imdb-rating-badge {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}

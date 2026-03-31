@@ -1,0 +1,288 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+.auth-container {
+    background: linear-gradient(rgba(15, 15, 15, 0.75), rgba(15, 15, 15, 0.85)),
+                url('https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80') center/cover fixed no-repeat; 
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    color: #ffffff;
+    padding-top: 120px;     
+    padding-bottom: 2rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-container::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    pointer-events: none;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    opacity: 0.03;
+    z-index: 1;
+}
+
+.auth-box {
+    background: rgba(30, 30, 30, 0.95); 
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    padding: 2.5rem 2rem; 
+    border-radius: 12px; 
+    width: 100%;
+    max-width: 400px; 
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+    animation: slideUpFade 0.6s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes slideUpFade {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.auth-logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    color: #e50914;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+}
+
+.logo-icon {
+    stroke: #e50914;
+    fill: #e50914;
+}
+
+.auth-box h2 {
+    font-size: 2.2rem;
+    font-weight: 700;
+    margin: 0 0 0.5rem 0;
+    color: #ffffff;
+    text-align: center;
+}
+
+.auth-subtitle {
+    font-size: 0.95rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: 0;
+    font-weight: 400;
+}
+
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.1rem;
+}
+
+.input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+}
+
+.input-group label {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: #ffffff;
+}
+
+.input-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
+
+.input-icon {
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, 0.6);
+    pointer-events: none;
+}
+
+.input-wrapper input {
+    width: 100%;
+    padding: 0.9rem 1rem 0.9rem 3rem; 
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    background-color: transparent;
+    color: #fff;
+    font-size: 0.95rem;
+    font-family: inherit;
+    transition: all 0.2s ease;
+    box-sizing: border-box;
+}
+
+.input-wrapper input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+    font-weight: 400;
+}
+
+.input-wrapper input:focus {
+    outline: none;
+    border-color: #e50914;
+    box-shadow: 0 0 0 2px rgba(229, 9, 20, 0.15);
+}
+
+.input-wrapper:hover input:not(:focus) {
+    border-color: rgba(255, 255, 255, 0.45);
+}
+
+.toggle-password {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: rgba(255, 255, 255, 0.6);
+    cursor: pointer;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: color 0.2s ease;
+}
+
+.toggle-password:hover {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.auth-btn {
+    background-color: #e50914;
+    color: #ffffff;
+    padding: 0.9rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+    margin-top: 0.5rem;
+    width: 100%;
+}
+
+.auth-btn:hover {
+    background-color: #b80710;
+}
+
+.auth-btn:active {
+    background-color: #8f050c;
+}
+
+.auth-footer {
+    font-size: 0.9rem;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.auth-footer a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-left: 0.4rem;
+    transition: color 0.2s ease;
+}
+
+.auth-footer a:hover {
+    color: #e50914;
+    text-decoration: underline;
+}
+
+.error-message {
+    color: #ff4b4b !important;
+    font-size: 0.85rem !important;
+    margin-top: 0 !important;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 500;
+    animation: errorShake 0.4s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes errorShake {
+    10%, 90% { transform: translate3d(-1px, 0, 0); }
+    20%, 80% { transform: translate3d(2px, 0, 0); }
+    30%, 50%, 70% { transform: translate3d(-4px, 0, 0); }
+    40%, 60% { transform: translate3d(4px, 0, 0); }
+}
+
+@media (max-width: 500px) {
+    .auth-box {
+        padding: 2rem 1.5rem;
+        border-radius: 12px;
+    }
+}
+
+
+@media (max-width: 600px) {
+    .auth-container {
+        padding-top: 100px; 
+        padding-left: 1rem;
+        padding-right: 1rem;
+        align-items: flex-start; 
+    }
+
+    .auth-box {
+        padding: 2rem 1.25rem; 
+        max-width: 100%; 
+    }
+
+    .auth-box h2 {
+        font-size: 1.8rem; 
+    }
+
+    .auth-subtitle {
+        font-size: 0.85rem; 
+    }
+
+    .input-wrapper input {
+        padding: 0.8rem 1rem 0.8rem 2.8rem; 
+        font-size: 0.9rem;
+    }
+
+    .auth-btn {
+        padding: 0.8rem;
+        font-size: 0.95rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .auth-container {
+        padding-top: 80px;
+    }
+
+    .auth-box {
+        padding: 1.5rem 1rem;
+        background: rgba(30, 30, 30, 0.98); 
+        border-radius: 10px;
+    }
+
+    .auth-box h2 {
+        font-size: 1.5rem;
+    }
+
+    .auth-logo {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .auth-footer {
+        font-size: 0.8rem;
+    }
+}
