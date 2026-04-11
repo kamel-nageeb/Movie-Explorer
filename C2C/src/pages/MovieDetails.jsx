@@ -7,18 +7,19 @@ import './MovieDetails.css';
 function MovieDetails() {
   const { id } = useParams();
   const navigate = useNavigate();
-  const movie = moviesData.find(m => m.id === parseInt(id));
+  const movieId = Number.parseInt(id, 10);
+  const movie = moviesData.find((m) => m.id === movieId);
 
-  const [isFavorite, setIsFavorite] = useState(false);
+  const [isFavorite, setIsFavorite] = useState(() => {
+    const m = moviesData.find((x) => x.id === movieId);
+    if (!m) return false;
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    return favorites.some((fav) => fav.id === m.id);
+  });
+
   useEffect(() => {
-    if (movie) {
-      const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-      const found = favorites.some(fav => fav.id === movie.id);
-      setIsFavorite(found);
-    }
-
     window.scrollTo(0, 0);
-  }, [id, movie]);
+  }, [id]);
 
 
   const toggleFavorite = () => {

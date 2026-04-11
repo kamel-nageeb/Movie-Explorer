@@ -38,6 +38,9 @@ function Home() {
             <button className="btn-details" onClick={goToInceptionDetails}>
               View Details
             </button>
+            <button type="button" className="btn-details btn-favorites" onClick={goToFavorites}>
+              My Favorites
+            </button>
           </div>
         </div>
       </section>

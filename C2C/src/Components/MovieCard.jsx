@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Heart, Star, PlayCircle } from 'lucide-react';
 import './MovieCard.css';
 
-function MovieCard({ movie, onFavoriteToggle }) {
-  const [isFavorite, setIsFavorite] = useState(false);
+function readFavorite(movieId) {
+  try {
+    const favs = JSON.parse(localStorage.getItem('favorites') || '[]');
+    return favs.some((f) => f.id === movieId);
+  } catch {
+    return false;
+  }
+}
 
-  useEffect(() => {
-    const favs = JSON.parse(localStorage.getItem("favorites") || "[]");
-    const found = favs.some(f => f.id === movie.id);
-    setIsFavorite(found);
-  }, [movie.id]);
+function MovieCard({ movie, onFavoriteToggle }) {
+  const [isFavorite, setIsFavorite] = useState(() => readFavorite(movie.id));
 
   function handleFavoriteClick(e) {
     e.preventDefault(); 

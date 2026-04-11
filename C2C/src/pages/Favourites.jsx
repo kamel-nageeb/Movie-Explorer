@@ -1,18 +1,21 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import MovieCard from '../Components/MovieCard';
 import './Favourites.css';
 
+function readFavoritesFromStorage() {
+  try {
+    return JSON.parse(localStorage.getItem('favorites') || '[]');
+  } catch {
+    return [];
+  }
+}
+
 function Favourites() {
-  const [favMovies, setFavMovies] = useState([]);
+  const [favMovies, setFavMovies] = useState(() => readFavoritesFromStorage());
 
   const loadFavorites = () => {
-    const savedFavs = JSON.parse(localStorage.getItem("favorites") || "[]");
-    setFavMovies(savedFavs);
+    setFavMovies(readFavoritesFromStorage());
   };
-
-  useEffect(() => {
-    loadFavorites();
-  }, []);
 
   return (
     <div className="favourites-page">

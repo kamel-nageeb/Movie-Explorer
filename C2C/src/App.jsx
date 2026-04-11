@@ -1,25 +1,30 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, useLocation, useParams } from 'react-router-dom';
 import Navbar from './Components/Navbar';
 import Footer from './Components/Footer';
-import Home from './Pages/Home';
-import Login from './Pages/Login';
-import SignUp from './Pages/SignUp';
-import About from './Pages/About';
-import Movies from './Pages/Movies';
-import Favourites from './Pages/Favourites';
-import MovieDetails from './Pages/MovieDetails'; 
-import SearchResults from './Pages/SearchResults'; 
+import Home from './pages/Home';
+import Login from './pages/Login';
+import SignUp from './pages/SignUp';
+import About from './pages/About';
+import Movies from './pages/Movies';
+import Favourites from './pages/Favourites';
+import MovieDetails from './pages/MovieDetails';
+import SearchResults from './pages/SearchResults'; 
 import './index.css';
 
 function ScrollToTop() {
   const { pathname } = useLocation();
-  
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
   return null;
+}
+
+function MovieDetailsRoute() {
+  const { id } = useParams();
+  return <MovieDetails key={id} />;
 }
 
 function App() {
@@ -36,7 +41,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/movies" element={<Movies />} />
             <Route path="/favourites" element={<Favourites />} />
-            <Route path="/movie/:id" element={<MovieDetails />} />
+            <Route path="/movie/:id" element={<MovieDetailsRoute />} />
             <Route path="/search" element={<SearchResults />} />
           </Routes>
         </main>
